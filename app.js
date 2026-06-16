@@ -1,23 +1,28 @@
-
-function nomeCompleto(usuario) {
-    return usuario.nome + ' ' + usuario.sobrenome
+function BemVindo(props) {
+    return <h1>Bem vindo{props.nome}!</h1>
 }
 
-const usuario = {
-    nome: "Vinícius",
-    sobrenome: "Brandão"
+function Conteudo() {
+    return (
+        <div>
+            <p>Isso é uma frase aleatoria so pra ocupar espaço</p>
+            <p>Outra frase pra ocupar espaço blablabla</p>
+        </div>
+    )
 }
 
-const nome = "Vinícius Brandão";
-const pagina = (
-    <div>
-        <h1 className="header">Olá {nome}!</h1>
-        <p>Isso é um parágrafo</p>
-    </div>
-);
 
+function App() {
+    return (
+        <div>
+            <BemVindo nome=" Vinícius" />
+            <BemVindo nome=" Isla" />
+            <Conteudo />
+        </div>
+    )
+}
 //Básico do React 
 ReactDOM.render(
-    pagina,
+    <App/>,
     document.querySelector("#root")
 );
